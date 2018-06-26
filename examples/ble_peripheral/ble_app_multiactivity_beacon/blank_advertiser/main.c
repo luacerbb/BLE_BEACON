@@ -160,9 +160,14 @@ static struct
 __align(4) uint8_t  m_beacon_start_sta[4] = {0}; ///为0 默认不启动beacon 扫描
 
 #define BEACON_UNREAD_MAX 5
-#define MAC_LIST_MAX  20
-uint8_t m_maclist[MAC_LIST_MAX][7] = {0};
+//#define MAC_LIST_MAX  20
+uint8_t m_maclist[MAC_LIST_MAX][7] = {0}; //当前mac列表
 uint8_t m_beacon_num = 0; ///扫描到beacon数量
+
+uint8_t m_last_maclist[MAC_LIST_MAX][7] = {0}; ///上次
+uint8_t m_last_beacon_num = 0; ///上次扫描到beacon数量
+
+
 static volatile bool m_ready_send_mac = false;
 extern uint8_t BeaconUnReadNum ; ///统计beacon数据未读次数，未读次数达到一定次数则判定为无需继续扫描beacon
 
@@ -998,6 +1003,11 @@ static void on_ble_evt(ble_evt_t * p_ble_evt)
         case BLE_GAP_EVT_TIMEOUT:
             if (p_gap_evt->params.timeout.src == BLE_GAP_TIMEOUT_SRC_SCAN)
             {
+							
+							  memset(m_last_maclist,0,sizeof(m_last_maclist));
+								memcpy(m_last_maclist,m_maclist,m_beacon_num * 7);	
+							  m_last_beacon_num = m_beacon_num;	
+							
                 DEBUG_PRINT(0,"[APPL]: Scan timed out. cnt=%d\r\n",m_beacon_num);
               //  scan_start();
             }

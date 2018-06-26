@@ -7,6 +7,8 @@
 
 #include "stdlib.h"
 
+#include "scanner_beacon.h"
+
 static uart_packer_info_t   m_uart_packer_info= {0};
 static uint8_t m_lastmac[7] = {0};
 uint8_t BeaconUnReadNum = 0; ///统计beacon数据未读次数，未读次数达到一定次数则判定为无需继续扫描beacon
@@ -301,9 +303,9 @@ static void uart_schedule_hander(void * p_event_data, uint16_t event_size)
 	m_uart_protocol_interface.data_analysis_handler();
 }
 
-extern uint8_t m_maclist[10][7];
+extern uint8_t m_last_maclist[MAC_LIST_MAX][7];
 extern void beacon_next_scan_timer_start(uint16_t sec);
-extern uint8_t m_beacon_num ; 
+extern uint8_t m_last_beacon_num ; 
 extern void beacon_scan_timer_stop(void);
 
 static void rui_schedule_save_beacon_sta(void * p_event_data, uint16_t event_size)
@@ -381,20 +383,20 @@ void uart_process()
 				///清除未读beacon次数
 				BeaconUnReadNum = 0;
 				send_buf[0]=STATUS_SUCCESS;
-				temp = abs(m_lastmac[6] - m_maclist[0][6]);
+				temp = abs(m_lastmac[6] - m_last_maclist[0][6]);
 			
-				if(memcmp(m_lastmac,&m_maclist[0][0],6) != 0 || temp > 10)
+				if(memcmp(m_lastmac,&m_last_maclist[0][0],6) != 0 || temp > 10)
 				{
-						beacon_len = m_beacon_num * 7;
-						memcpy(&send_buf[1],m_maclist[0],beacon_len);
-					  memcpy(m_lastmac,&m_maclist[0][0],7);
+						beacon_len = m_last_beacon_num * 7;
+						memcpy(&send_buf[1],m_last_maclist[0],beacon_len);
+					  memcpy(m_lastmac,&m_last_maclist[0][0],7);
 				}
 				else
 				{
 						beacon_len  = 0;
 				}	
 				
-				DEBUG_PRINT(0,"beacon data len:%d,%d,%d,%d\r\n",beacon_len,m_beacon_num,m_lastmac[6],m_maclist[0][6]);
+				DEBUG_PRINT(0,"beacon data len:%d,%d,%d,%d\r\n",beacon_len,m_last_beacon_num,m_lastmac[6],m_last_maclist[0][6]);
 				DEBUG_PRINT(0,"beacon data val=%d,%02x:%02x:%02x:%02x:%02x:%02x\r\n",temp,m_lastmac[0],m_lastmac[1],m_lastmac[2],m_lastmac[3],m_lastmac[4],m_lastmac[5]);
 				SendUartData(m_uart_packer_info.pack_cmd,send_buf,beacon_len + 1);				
 				//nrf_delay_ms(100);

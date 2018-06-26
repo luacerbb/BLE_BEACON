@@ -28,97 +28,66 @@ Project File Date:  04/09/2018
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'E:\kv_5\ARM\ARMCC\Bin'
 Build target 'nrf51422_xxac_s110_timeslot'
 compiling scanner_beacon.c...
-compiling debug_utils.c...
-compiling flash_opt.c...
-compiling advertiser_beacon_timeslot.c...
-compiling ble_advdata.c...
-compiling ble_bas.c...
-compiling ble_conn_params.c...
 compiling user_drv_console.c...
-..\..\..\user_drv_console.c(102): warning:  #223-D: function "nrf_delay_ms" declared implicitly
+..\..\..\user_drv_console.c(104): warning:  #223-D: function "nrf_delay_ms" declared implicitly
   		nrf_delay_ms(100);
-..\..\..\user_drv_console.c(194): warning:  #223-D: function "nrf_delay_ms" declared implicitly
+..\..\..\user_drv_console.c(196): warning:  #223-D: function "nrf_delay_ms" declared implicitly
   	nrf_delay_ms(100);
-..\..\..\user_drv_console.c(211): warning:  #223-D: function "nrf_delay_ms" declared implicitly
+..\..\..\user_drv_console.c(213): warning:  #223-D: function "nrf_delay_ms" declared implicitly
   		nrf_delay_ms(10);
-..\..\..\user_drv_console.c(254): warning:  #223-D: function "nrf_delay_ms" declared implicitly
+..\..\..\user_drv_console.c(256): warning:  #223-D: function "nrf_delay_ms" declared implicitly
   		nrf_delay_ms(100);
-..\..\..\user_drv_console.c(357): warning:  #223-D: function "nrf_delay_ms" declared implicitly
+..\..\..\user_drv_console.c(359): warning:  #223-D: function "nrf_delay_ms" declared implicitly
   			nrf_delay_ms(100);
-..\..\..\user_drv_console.c(435): warning:  #223-D: function "nrf_delay_ms" declared implicitly
+..\..\..\user_drv_console.c(437): warning:  #223-D: function "nrf_delay_ms" declared implicitly
   				nrf_delay_ms(100);
-..\..\..\user_drv_console.c(309): warning:  #177-D: function "rui_schedule_save_beacon_sta"  was declared but never referenced
+..\..\..\user_drv_console.c(311): warning:  #177-D: function "rui_schedule_save_beacon_sta"  was declared but never referenced
   static void rui_schedule_save_beacon_sta(void * p_event_data, uint16_t event_size)
 ..\..\..\user_drv_console.c: 7 warnings, 0 errors
-compiling ble_advertising.c...
-compiling ble_dis.c...
-compiling ble_srv_common.c...
-compiling ble_hrs.c...
 compiling main.c...
-..\..\..\main.c(171): warning:  #1295-D: Deprecated declaration scanner_start - give arg types
+..\..\..\main.c(176): warning:  #1295-D: Deprecated declaration scanner_start - give arg types
   static void scanner_start();
-..\..\..\main.c(182): warning:  #9-D: nested comment is not allowed
+..\..\..\main.c(187): warning:  #9-D: nested comment is not allowed
   /*
-..\..\..\main.c(288): warning:  #223-D: function "nrf_delay_ms" declared implicitly
+..\..\..\main.c(293): warning:  #223-D: function "nrf_delay_ms" declared implicitly
   	nrf_delay_ms(100);
-..\..\..\main.c(496): warning:  #177-D: variable "err_code"  was declared but never referenced
+..\..\..\main.c(501): warning:  #177-D: variable "err_code"  was declared but never referenced
   	uint32_t       err_code;
-..\..\..\main.c(532): warning:  #69-D: integer conversion resulted in truncation
+..\..\..\main.c(537): warning:  #69-D: integer conversion resulted in truncation
   		RTS_PIN_NUMBER,
-..\..\..\main.c(533): warning:  #69-D: integer conversion resulted in truncation
+..\..\..\main.c(538): warning:  #69-D: integer conversion resulted in truncation
   		CTS_PIN_NUMBER,
-..\..\..\main.c(636): warning:  #550-D: variable "err_code"  was set but never used
+..\..\..\main.c(641): warning:  #550-D: variable "err_code"  was set but never used
   	uint32_t      err_code;
-..\..\..\main.c(1213): warning:  #188-D: enumerated type mixed with another type
+..\..\..\main.c(1223): warning:  #188-D: enumerated type mixed with another type
   	rfid_init.bitrate        = current_radio_parm.rf_parm.datarate;
-..\..\..\main.c(1214): warning:  #188-D: enumerated type mixed with another type
+..\..\..\main.c(1224): warning:  #188-D: enumerated type mixed with another type
   	rfid_init.crc            = current_radio_parm.rf_parm.crc_mode; 
-..\..\..\main.c(1238): warning:  #177-D: variable "err_code"  was declared but never referenced
+..\..\..\main.c(1248): warning:  #177-D: variable "err_code"  was declared but never referenced
       uint32_t err_code;
-..\..\..\main.c(1239): warning:  #177-D: variable "gap_addr"  was declared but never referenced
+..\..\..\main.c(1249): warning:  #177-D: variable "gap_addr"  was declared but never referenced
   		ble_gap_addr_t gap_addr = {0};	
-..\..\..\main.c(1316): warning:  #174-D: expression has no effect
+..\..\..\main.c(1326): warning:  #174-D: expression has no effect
       beacon_init.minor         = m_beacon_save_data.minjor;
 EACON_MINOR;
-..\..\..\main.c(1307): warning:  #550-D: variable "beacon_uuid"  was set but never used
+..\..\..\main.c(1317): warning:  #550-D: variable "beacon_uuid"  was set but never used
       static uint8_t beacon_uuid[] = {BEACON_UUID};
-..\..\..\main.c(1347): warning:  #223-D: function "nrf_delay_ms" declared implicitly
+..\..\..\main.c(1357): warning:  #223-D: function "nrf_delay_ms" declared implicitly
   			nrf_delay_ms(1000);
-..\..\..\main.c(1358): warning:  #111-D: statement is unreachable
+..\..\..\main.c(1368): warning:  #111-D: statement is unreachable
   		 if(m_ready_send_mac)
-..\..\..\main.c(1497): warning:  #111-D: statement is unreachable
+..\..\..\main.c(1507): warning:  #111-D: statement is unreachable
   			
 EBUG_PRINT(0,"main loop\r\n");
 ..\..\..\main.c(149): warning:  #177-D: variable "m_beacon_scanner"  was declared but never referenced
   } m_beacon_scanner;
-..\..\..\main.c(695): warning:  #177-D: function "advertising_start"  was declared but never referenced
+..\..\..\main.c(700): warning:  #177-D: function "advertising_start"  was declared but never referenced
   static void advertising_start(void)
-..\..\..\main.c(727): warning:  #177-D: function "advertising_stop"  was declared but never referenced
+..\..\..\main.c(732): warning:  #177-D: function "advertising_stop"  was declared but never referenced
   static void advertising_stop(void)
 ..\..\..\main.c: 19 warnings, 0 errors
-compiling nrf_delay.c...
-compiling nrf_drv_common.c...
-compiling app_fifo.c...
-compiling nrf_drv_wdt.c...
-compiling nrf_drv_gpiote.c...
-compiling nrf_assert.c...
-compiling pstorage.c...
-compiling nrf_drv_uart.c...
-compiling device_manager_peripheral.c...
-compiling app_button.c...
-compiling SEGGER_RTT.c...
-compiling retarget.c...
-compiling app_timer.c...
-compiling app_scheduler.c...
-compiling app_uart_fifo.c...
-compiling SEGGER_RTT_printf.c...
-compiling app_gpiote.c...
-assembling arm_startup_nrf51.s...
-compiling advertiser_ibeacon.c...
-compiling softdevice_handler.c...
-compiling system_nrf51.c...
 linking...
-Program Size: Code=20248 RO-data=688 RW-data=460 ZI-data=5276  
+Program Size: Code=20280 RO-data=688 RW-data=460 ZI-data=5420  
 FromELF: creating hex file...
 ".\_build\nrf51422_xxac_s110_timeslot.axf" - 0 Error(s), 26 Warning(s).
 
@@ -147,10 +116,10 @@ Package Vendor: NordicSemiconductor
    * Component: ARM::CMSIS:CORE:4.3.0
 
    * Component: NordicSemiconductor::Device:Startup:8.2.0
-      Source file:   Device\Source\arm\arm_startup_nrf51.s
       Source file:   Device\Source\system_nrf51.c
       Include file:  Device\Include\system_nrf51.h
-Build Time Elapsed:  00:00:05
+      Source file:   Device\Source\arm\arm_startup_nrf51.s
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

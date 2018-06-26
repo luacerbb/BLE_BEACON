@@ -32,6 +32,8 @@
 #include "ble_gap.h"
 #include "ble_srv_common.h"
 
+#define MAC_LIST_MAX 20
+
 /**@brief Beacon Scanner event type. */
 typedef enum
 {

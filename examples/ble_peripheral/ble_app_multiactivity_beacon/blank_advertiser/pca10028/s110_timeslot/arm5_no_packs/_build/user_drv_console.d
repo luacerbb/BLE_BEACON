@@ -41,3 +41,4 @@
 .\_build\user_drv_console.o: ..\..\..\..\..\..\..\components\softdevice\s110\headers\ble_gatts.h
 .\_build\user_drv_console.o: ..\..\..\..\..\..\..\components\libraries\scheduler\app_scheduler.h
 .\_build\user_drv_console.o: E:\kv_5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\_build\user_drv_console.o: ..\..\..\scanner_beacon.h

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\_build\nrf51422_xxac_s110_timeslot.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\_build\nrf51422_xxac_s110_timeslot.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Mon Jun 25 17:47:34 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Tue Jun 26 09:04:41 2018
 <BR><P>
 <H3>Maximum Stack Usage =        528 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -292,6 +292,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvm_write_radio_parm_info_write_complete_cb
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_conn_params_init
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_init
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_ble_evt
 </UL>
 
 <P><STRONG><a name="[f7]"></a>__aeabi_memmove</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, memmovea.o(.text), UNUSED)
@@ -319,6 +320,7 @@ Global Symbols
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_gpiote_init
 <LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;services_init
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_ble_evt
 <LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beacon_scan_start
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;advertising_init
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;char_add
@@ -875,8 +877,8 @@ Global Symbols
 <P><STRONG><a name="[7d]"></a>nrf_drv_gpiote_init</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, nrf_drv_gpiote.o(i.nrf_drv_gpiote_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = nrf_drv_gpiote_init &rArr; nrf_drv_common_irq_enable
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;channel_free
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_common_irq_enable
+<BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_common_irq_enable
+<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;channel_free
 </UL>
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_gpiote_init
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_button_init
@@ -1082,7 +1084,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_stack_init
 </UL>
 
-<P><STRONG><a name="[2e]"></a>uart_event_handle</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, main.o(i.uart_event_handle))
+<P><STRONG><a name="[2e]"></a>uart_event_handle</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, main.o(i.uart_event_handle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = uart_event_handle &rArr; app_error_handler &rArr; SEGGER_RTT_printf &rArr; SEGGER_RTT_vprintf &rArr; _PrintInt &rArr; _PrintUnsigned &rArr; _StoreChar &rArr; SEGGER_RTT_Write &rArr; __aeabi_memcpy
 </UL>
 <BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_get
@@ -1242,12 +1244,14 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;action_uart_disable
 </UL>
 
-<P><STRONG><a name="[a9]"></a>on_ble_evt</STRONG> (Thumb, 480 bytes, Stack size 56 bytes, main.o(i.on_ble_evt))
+<P><STRONG><a name="[a9]"></a>on_ble_evt</STRONG> (Thumb, 510 bytes, Stack size 56 bytes, main.o(i.on_ble_evt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 352<LI>Call Chain = on_ble_evt &rArr; app_error_handler &rArr; SEGGER_RTT_printf &rArr; SEGGER_RTT_vprintf &rArr; _PrintInt &rArr; _PrintUnsigned &rArr; _StoreChar &rArr; SEGGER_RTT_Write &rArr; __aeabi_memcpy
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEGGER_RTT_printf
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_evt_dispatch
