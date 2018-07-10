@@ -27,23 +27,6 @@ Project File Date:  04/09/2018
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'E:\kv_5\ARM\ARMCC\Bin'
 Build target 'nrf51422_xxac_s110_timeslot'
-compiling scanner_beacon.c...
-compiling user_drv_console.c...
-..\..\..\user_drv_console.c(104): warning:  #223-D: function "nrf_delay_ms" declared implicitly
-  		nrf_delay_ms(100);
-..\..\..\user_drv_console.c(196): warning:  #223-D: function "nrf_delay_ms" declared implicitly
-  	nrf_delay_ms(100);
-..\..\..\user_drv_console.c(213): warning:  #223-D: function "nrf_delay_ms" declared implicitly
-  		nrf_delay_ms(10);
-..\..\..\user_drv_console.c(256): warning:  #223-D: function "nrf_delay_ms" declared implicitly
-  		nrf_delay_ms(100);
-..\..\..\user_drv_console.c(359): warning:  #223-D: function "nrf_delay_ms" declared implicitly
-  			nrf_delay_ms(100);
-..\..\..\user_drv_console.c(437): warning:  #223-D: function "nrf_delay_ms" declared implicitly
-  				nrf_delay_ms(100);
-..\..\..\user_drv_console.c(311): warning:  #177-D: function "rui_schedule_save_beacon_sta"  was declared but never referenced
-  static void rui_schedule_save_beacon_sta(void * p_event_data, uint16_t event_size)
-..\..\..\user_drv_console.c: 7 warnings, 0 errors
 compiling main.c...
 ..\..\..\main.c(176): warning:  #1295-D: Deprecated declaration scanner_start - give arg types
   static void scanner_start();
@@ -76,7 +59,7 @@ EACON_MINOR;
   			nrf_delay_ms(1000);
 ..\..\..\main.c(1368): warning:  #111-D: statement is unreachable
   		 if(m_ready_send_mac)
-..\..\..\main.c(1507): warning:  #111-D: statement is unreachable
+..\..\..\main.c(1509): warning:  #111-D: statement is unreachable
   			
 EBUG_PRINT(0,"main loop\r\n");
 ..\..\..\main.c(149): warning:  #177-D: variable "m_beacon_scanner"  was declared but never referenced
@@ -87,9 +70,9 @@ EBUG_PRINT(0,"main loop\r\n");
   static void advertising_stop(void)
 ..\..\..\main.c: 19 warnings, 0 errors
 linking...
-Program Size: Code=20280 RO-data=688 RW-data=460 ZI-data=5420  
+Program Size: Code=20312 RO-data=688 RW-data=460 ZI-data=5420  
 FromELF: creating hex file...
-".\_build\nrf51422_xxac_s110_timeslot.axf" - 0 Error(s), 26 Warning(s).
+".\_build\nrf51422_xxac_s110_timeslot.axf" - 0 Error(s), 19 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -116,9 +99,9 @@ Package Vendor: NordicSemiconductor
    * Component: ARM::CMSIS:CORE:4.3.0
 
    * Component: NordicSemiconductor::Device:Startup:8.2.0
+      Source file:   Device\Source\arm\arm_startup_nrf51.s
       Source file:   Device\Source\system_nrf51.c
       Include file:  Device\Include\system_nrf51.h
-      Source file:   Device\Source\arm\arm_startup_nrf51.s
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

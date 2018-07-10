@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\_build\nrf51422_xxac_s110_timeslot.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\_build\nrf51422_xxac_s110_timeslot.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Tue Jun 26 09:04:41 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Tue Jul 10 09:40:07 2018
 <BR><P>
 <H3>Maximum Stack Usage =        528 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -339,8 +339,7 @@ Global Symbols
 <P><STRONG><a name="[e3]"></a>memcmp</STRONG> (Thumb, 26 bytes, Stack size 12 bytes, memcmp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = memcmp
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_process
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_ble_evt
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_ble_evt
 </UL>
 
 <P><STRONG><a name="[4d]"></a>__aeabi_llsl</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, llshl.o(.text))
@@ -716,7 +715,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendUartData
 </UL>
 
-<P><STRONG><a name="[9e]"></a>beacon_next_scan_timer_start</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, main.o(i.beacon_next_scan_timer_start))
+<P><STRONG><a name="[9e]"></a>beacon_next_scan_timer_start</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, main.o(i.beacon_next_scan_timer_start))
 <BR><BR>[Stack]<UL><LI>Max Depth = 312<LI>Call Chain = beacon_next_scan_timer_start &rArr; app_error_handler &rArr; SEGGER_RTT_printf &rArr; SEGGER_RTT_vprintf &rArr; _PrintInt &rArr; _PrintUnsigned &rArr; _StoreChar &rArr; SEGGER_RTT_Write &rArr; __aeabi_memcpy
 </UL>
 <BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_stop
@@ -1092,7 +1091,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
 </UL>
-<P><STRONG><a name="[4]"></a>uart_process</STRONG> (Thumb, 486 bytes, Stack size 80 bytes, user_drv_console.o(i.uart_process))
+<P><STRONG><a name="[4]"></a>uart_process</STRONG> (Thumb, 476 bytes, Stack size 80 bytes, user_drv_console.o(i.uart_process))
 <BR><BR>[Stack]<UL><LI>Max Depth = 448<LI>Call Chain = uart_process &rArr; radio_parm_check &rArr; nvm_write &rArr; app_error_handler &rArr; SEGGER_RTT_printf &rArr; SEGGER_RTT_vprintf &rArr; _PrintInt &rArr; _PrintUnsigned &rArr; _StoreChar &rArr; SEGGER_RTT_Write &rArr; __aeabi_memcpy
 </UL>
 <BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8
@@ -1106,7 +1105,6 @@ Global Symbols
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEGGER_RTT_printf
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beacon_scan_timer_stop
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beacon_next_scan_timer_start
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>

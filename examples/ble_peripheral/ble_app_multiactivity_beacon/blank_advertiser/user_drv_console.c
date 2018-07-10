@@ -385,7 +385,8 @@ void uart_process()
 				send_buf[0]=STATUS_SUCCESS;
 				temp = abs(m_lastmac[6] - m_last_maclist[0][6]);
 			
-				if(memcmp(m_lastmac,&m_last_maclist[0][0],6) != 0 || temp > 10)
+			//	if(memcmp(m_lastmac,&m_last_maclist[0][0],6) != 0 || temp > 10)
+				if(1)
 				{
 						beacon_len = m_last_beacon_num * 7;
 						memcpy(&send_buf[1],m_last_maclist[0],beacon_len);
@@ -423,12 +424,15 @@ void uart_process()
 			case STRAT_SCAN_BEACON:
 				{
 					 ///启动beacon 扫描定时器
+					 uint8_t interval = m_uart_packer_info.pack_DatRev[0];
 					 send_buf[0]=STATUS_SUCCESS;
 					 memset(m_lastmac,0,sizeof(m_lastmac));
 					 rui_save_scan_beacon_sta((uint8_t)m_uart_packer_info.pack_DatRev[0]);
 
 					 SendUartData(m_uart_packer_info.pack_cmd,send_buf,1);
-					 beacon_next_scan_timer_start(m_uart_packer_info.pack_DatRev[0]);
+					// beacon_next_scan_timer_start(m_uart_packer_info.pack_DatRev[0]);
+					DEBUG_PRINT(0,"itv:%d,%d\r\n",m_uart_packer_info.pack_DatRev[0],interval); ///有时会出现前后pack_datrev数值不一样情况0
+					beacon_next_scan_timer_start(interval);
 				}
 				break;
 			default:

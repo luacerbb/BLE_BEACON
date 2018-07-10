@@ -1390,16 +1390,18 @@ void beacon_next_scan_timer_start(uint16_t sec)
 		uint32_t ticks = 0; //APP_TIMER_TICKS(21000,APP_TIMER_PRESCALER)
     // Start application timers.
     //err_code = app_timer_start(m_start_scan_beacon_timer_id, BEACON_NEXT_SCAN_INTERVAL, NULL);
-	  
+		app_timer_stop(m_start_scan_beacon_timer_id);  
+	
 	  if(sec > 0)
 		{
 			ticks = APP_TIMER_TICKS(sec*1000,APP_TIMER_PRESCALER);
 			err_code = app_timer_start(m_start_scan_beacon_timer_id, ticks, NULL);
+			DEBUG_PRINT(0,"start time sta:%d\r\n",err_code);
 			APP_ERROR_CHECK(err_code);
 	  }
 		else
 		{
-			err_code = app_timer_stop(m_start_scan_beacon_timer_id);
+	//		err_code = app_timer_stop(m_start_scan_beacon_timer_id);
 		}
 	DEBUG_PRINT(0,"beacon scan timer start sec:%d,ticks:%d\r\n",sec,ticks);
 
